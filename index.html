@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>LOARU – The Ritual v1.15</title>
+  <title>LOARU – The Ritual v1.16</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -92,21 +92,21 @@
     /* Sehr schmaler Wasserbereich, nur innerhalb der klaren Glasfläche */
     .water-window {
       position: absolute;
-      left: 50%;
+      left: 49.4%;
       top: 62.7%;
-      width: min(30vw, 126px);
+      width: min(27vw, 114px);
       height: 19.2svh;
       transform: translate(-50%, -50%);
       z-index: 2;
       overflow: hidden;
       border-radius: 43% 43% 52% 52% / 6% 6% 18% 18%;
       clip-path: polygon(
-        3% 0%,
-        97% 0%,
-        96% 72%,
-        88% 100%,
-        10% 100%,
-        3% 74%
+        4% 0%,
+        94% 0%,
+        92% 70%,
+        78% 100%,
+        12% 100%,
+        4% 74%
       );
       pointer-events: none;
     }
@@ -126,12 +126,12 @@
       );
       border-radius: 46% 46% 50% 50% / 7% 7% 18% 18%;
       clip-path: polygon(
-        0% 0%,
-        100% 0%,
-        98% 72%,
-        89% 100%,
-        8% 100%,
-        1% 74%
+        1% 0%,
+        96% 0%,
+        93% 70%,
+        79% 100%,
+        10% 100%,
+        2% 74%
       );
       animation: waterRise 3.4s 11.2s ease-in-out forwards;
     }
@@ -245,7 +245,7 @@
 
     <div class="water-stream" aria-hidden="true"></div>
 
-    <div class="footer">LOARU · VERSION 1.15</div>
+    <div class="footer">LOARU · VERSION 1.16</div>
   </main>
 </body>
 </html>
