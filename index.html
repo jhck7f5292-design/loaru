@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>LOARU – The Ritual v1.19</title>
+  <title>LOARU – The Ritual v1.20</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -161,7 +161,7 @@
       width: min(27vw, 114px);
       height: 19.2svh;
       transform: translate(-50%, -50%);
-      z-index: 3;
+      z-index: 5;
       overflow: hidden;
       border-radius: 43% 43% 52% 52% / 6% 6% 18% 18%;
       clip-path: polygon(
@@ -184,9 +184,9 @@
       opacity: 0;
       background: linear-gradient(
         to bottom,
-        rgba(126, 77, 49, .88) 0%,
-        rgba(91, 49, 29, .94) 48%,
-        rgba(57, 29, 18, .98) 100%
+        rgba(74, 38, 23, .98) 0%,
+        rgba(43, 21, 13, 1) 48%,
+        rgba(18, 8, 5, 1) 100%
       );
       border-radius: 46% 46% 50% 50% / 7% 7% 18% 18%;
       clip-path: polygon(
@@ -200,7 +200,7 @@
       box-shadow:
         inset 8px 0 12px rgba(255,255,255,.035),
         inset -8px 0 12px rgba(0,0,0,.10);
-      animation: cocoaRise 2.6s 15.0s ease-in-out forwards;
+      animation: cocoaRise 2.6s 13.0s ease-in-out forwards;
     }
 
     .cocoa::before {
@@ -213,12 +213,12 @@
       border-radius: 50%;
       background: radial-gradient(
         ellipse at center,
-        rgba(181, 124, 86, .55) 0%,
-        rgba(111, 65, 40, .34) 48%,
+        rgba(116, 70, 45, .62) 0%,
+        rgba(67, 34, 20, .46) 48%,
         transparent 78%
       );
       opacity: 0;
-      animation: cocoaSurface 2.6s 15.0s ease-in-out forwards;
+      animation: cocoaSurface 2.6s 13.0s ease-in-out forwards;
     }
 
     .footer {
@@ -275,8 +275,8 @@
         opacity: .82;
       }
       100% {
-        opacity: .96;
-        height: 17.1svh;
+        opacity: 1;
+        height: 18.4svh;
       }
     }
 
@@ -347,7 +347,7 @@
 
     <div class="water-stream" aria-hidden="true"></div>
 
-    <div class="footer">LOARU · VERSION 1.19</div>
+    <div class="footer">LOARU · VERSION 1.20</div>
   </main>
 
   <script>
@@ -367,7 +367,7 @@
           }
         );
       });
-    }, 15150);
+    }, 13150);
   </script>
 
 </body>
