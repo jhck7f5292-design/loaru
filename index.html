@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>LOARU – The Ritual v1.9</title>
+  <title>LOARU – The Ritual v1.10</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -93,9 +93,9 @@
     .water-window {
       position: absolute;
       left: 50%;
-      top: 64.2%;
+      top: 63.7%;
       width: min(30vw, 126px);
-      height: 21svh;
+      height: 19.2svh;
       transform: translate(-50%, -50%);
       z-index: 2;
       overflow: hidden;
@@ -112,9 +112,9 @@
       opacity: 0;
       background: linear-gradient(
         to bottom,
-        rgba(226,245,255,.07),
-        rgba(177,220,244,.12) 45%,
-        rgba(125,184,219,.15) 100%
+        rgba(205,230,245,.10),
+        rgba(145,185,210,.18) 45%,
+        rgba(95,145,180,.24) 100%
       );
       border-radius: 46% 46% 38% 38% / 7% 7% 12% 12%;
       animation: waterRise 3.4s 11.2s ease-in-out forwards;
@@ -130,8 +130,8 @@
       border-radius: 50%;
       background: radial-gradient(
         ellipse at center,
-        rgba(232,248,255,.28) 0%,
-        rgba(181,225,248,.13) 48%,
+        rgba(225,242,252,.24) 0%,
+        rgba(160,205,230,.12) 48%,
         transparent 79%
       );
       animation: ripple 1.1s 11.2s ease-in-out 3;
@@ -178,7 +178,7 @@
     @keyframes waterRise {
       0% { opacity: 0; height: 0; }
       10% { opacity: 1; }
-      100% { opacity: 1; height: 18.8svh; }
+      100% { opacity: 1; height: 17.1svh; }
     }
 
     @keyframes ripple {
@@ -229,7 +229,7 @@
 
     <div class="water-stream" aria-hidden="true"></div>
 
-    <div class="footer">LOARU · VERSION 1.9</div>
+    <div class="footer">LOARU · VERSION 1.10</div>
   </main>
 </body>
 </html>
