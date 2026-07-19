@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>LOARU – The Ritual v1.2</title>
+  <title>LOARU – The Ritual v1.3</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -69,6 +69,71 @@
       -webkit-user-drag: none;
     }
 
+    .water-stream {
+      position: absolute;
+      left: 50%;
+      top: -10vh;
+      width: 5px;
+      height: 0;
+      margin-left: -2.5px;
+      z-index: 5;
+      opacity: 0;
+      border-radius: 999px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.15),
+          rgba(210,235,255,.8),
+          rgba(255,255,255,.35)
+        );
+      box-shadow:
+        0 0 7px rgba(185,225,255,.3),
+        0 0 16px rgba(185,225,255,.12);
+      animation: waterStream 3.6s 11.2s ease-in-out forwards;
+    }
+
+    .water {
+      position: absolute;
+      left: 50%;
+      bottom: 18.8svh;
+      width: min(44vw, 190px);
+      height: 0;
+      transform: translateX(-50%);
+      z-index: 3;
+      opacity: 0;
+      overflow: hidden;
+      border-radius: 0 0 44% 44% / 0 0 10% 10%;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(208,235,255,.10),
+          rgba(176,218,245,.18) 30%,
+          rgba(125,188,225,.23) 100%
+        );
+      border-left: 1px solid rgba(210,235,255,.13);
+      border-right: 1px solid rgba(210,235,255,.13);
+      animation: waterRise 3.6s 11.2s ease-in-out forwards;
+    }
+
+    .water::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: 0;
+      width: 100%;
+      height: 9px;
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          ellipse at center,
+          rgba(225,245,255,.38) 0%,
+          rgba(170,220,245,.22) 45%,
+          rgba(100,170,215,.08) 72%,
+          transparent 76%
+        );
+      animation: ripple 1.1s 11.2s ease-in-out 3;
+    }
+
     .footer {
       position: absolute;
       bottom: max(2.5vh, 18px);
@@ -102,6 +167,56 @@
       100% {
         opacity: 1;
         transform: translate(var(--x-end), var(--fall)) scale(1) rotate(var(--spin));
+      }
+    }
+
+    @keyframes waterStream {
+      0% {
+        opacity: 0;
+        height: 0;
+      }
+
+      8% {
+        opacity: .9;
+        height: 66svh;
+      }
+
+      88% {
+        opacity: .9;
+        height: 66svh;
+      }
+
+      100% {
+        opacity: 0;
+        height: 0;
+      }
+    }
+
+    @keyframes waterRise {
+      0% {
+        opacity: 0;
+        height: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 1;
+        height: 18.5svh;
+      }
+    }
+
+    @keyframes ripple {
+      0%, 100% {
+        transform: scaleX(.86);
+        opacity: .45;
+      }
+
+      50% {
+        transform: scaleX(1.03);
+        opacity: .8;
       }
     }
   </style>
@@ -138,7 +253,10 @@
     <img class="disc" src="assets/core.png" alt="" style="--x-start:6px;--x-end:18px;--fall:76.5svh;--spin:320deg;animation-duration:2.12s;animation-delay:8.70s;">
     <img class="disc" src="assets/core.png" alt="" style="--x-start:-3px;--x-end:-9px;--fall:76.3svh;--spin:450deg;animation-duration:2.17s;animation-delay:8.80s;">
 
-    <div class="footer">LOARU · VERSION 1.2</div>
+    <div class="water-stream" aria-hidden="true"></div>
+    <div class="water" aria-hidden="true"></div>
+
+    <div class="footer">LOARU · VERSION 1.3</div>
   </main>
 </body>
 </html>
