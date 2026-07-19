@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>LOARU – The Ritual v1.23</title>
+  <title>LOARU – The Ritual v1.25</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -246,6 +246,141 @@
       animation: rootLabel 2.3s 18.9s ease-in-out forwards;
     }
 
+
+
+    .aer-window {
+      position: absolute;
+      left: 49.4%;
+      top: 62.3%;
+      width: min(27vw, 114px);
+      height: 19.2svh;
+      transform: translate(-50%, -50%);
+      z-index: 16;
+      overflow: hidden;
+      border-radius: 43% 43% 52% 52% / 6% 6% 18% 18%;
+      clip-path: polygon(4% 0%, 94% 0%, 92% 70%, 78% 100%, 12% 100%, 4% 74%);
+      pointer-events: none;
+      opacity: 0;
+      animation: aerWindow 4.2s 21.7s ease-in-out forwards;
+    }
+
+    .aer-swirl {
+      position: absolute;
+      left: 50%;
+      top: 53%;
+      width: 88%;
+      aspect-ratio: 1;
+      transform: translate(-50%, -50%) rotate(0deg) scale(.72);
+      border-radius: 50%;
+      opacity: 0;
+      background:
+        conic-gradient(
+          from 0deg,
+          transparent 0deg,
+          rgba(196, 146, 91, .18) 34deg,
+          transparent 78deg,
+          rgba(92, 53, 31, .42) 128deg,
+          transparent 194deg,
+          rgba(166, 113, 69, .24) 254deg,
+          transparent 360deg
+        );
+      filter: blur(2px);
+      animation: aerSpin 4.2s 21.7s cubic-bezier(.35,.04,.22,1) forwards;
+    }
+
+    .aer-swirl::before,
+    .aer-swirl::after {
+      content: "";
+      position: absolute;
+      inset: 17%;
+      border-radius: 50%;
+      border: 2px solid rgba(192, 140, 87, .16);
+      filter: blur(.6px);
+    }
+
+    .aer-swirl::after {
+      inset: 31%;
+      border-width: 1px;
+      border-color: rgba(227, 187, 125, .20);
+    }
+
+    .aer-label {
+      position: absolute;
+      left: calc(50% + 42px);
+      top: 18.2vh;
+      transform: translateX(-50%);
+      z-index: 17;
+      opacity: 0;
+      color: #d7b56d;
+      text-align: center;
+      font-size: clamp(16px, 4.5vw, 22px);
+      font-weight: 500;
+      letter-spacing: .24em;
+      padding-left: .24em;
+      text-shadow: 0 0 10px rgba(215,181,109,.12);
+      text-transform: uppercase;
+      pointer-events: none;
+      animation: aerLabel 4.2s 21.7s ease-in-out forwards;
+    }
+
+
+
+    .steam {
+      position: absolute;
+      left: 50%;
+      top: 47.5%;
+      width: 90px;
+      height: 145px;
+      transform: translateX(-50%);
+      z-index: 18;
+      pointer-events: none;
+      opacity: 0;
+      animation: steamGroup 5.0s 25.8s ease-in-out forwards;
+    }
+
+    .steam span {
+      position: absolute;
+      bottom: 0;
+      width: 18px;
+      height: 95px;
+      border-radius: 50%;
+      background: linear-gradient(
+        to top,
+        rgba(255,255,255,0),
+        rgba(255,255,255,.16) 35%,
+        rgba(255,255,255,.10) 68%,
+        rgba(255,255,255,0)
+      );
+      filter: blur(6px);
+      opacity: 0;
+      transform-origin: bottom center;
+      animation: steamRise 3.8s ease-in-out infinite;
+    }
+
+    .steam span:nth-child(1) { left: 18px; animation-delay: 25.9s; }
+    .steam span:nth-child(2) { left: 36px; height: 115px; animation-delay: 26.4s; }
+    .steam span:nth-child(3) { left: 54px; height: 100px; animation-delay: 26.9s; }
+
+    .complete-message {
+      position: absolute;
+      left: 50%;
+      top: 20.5vh;
+      width: min(88vw, 520px);
+      transform: translateX(-50%) translateY(8px);
+      z-index: 19;
+      opacity: 0;
+      color: #d7b56d;
+      text-align: center;
+      font-size: clamp(18px, 5vw, 28px);
+      font-weight: 300;
+      letter-spacing: .18em;
+      padding-left: .18em;
+      text-transform: uppercase;
+      text-shadow: 0 0 14px rgba(215,181,109,.12);
+      pointer-events: none;
+      animation: completeMessage 4.6s 27.2s ease-in-out forwards;
+    }
+
     .footer {
       position: absolute;
       bottom: max(2.5vh, 18px);
@@ -337,6 +472,70 @@
       100% { opacity: 0; transform: translateX(-50%) translateY(4px); }
     }
 
+
+
+    @keyframes aerWindow {
+      0% { opacity: 0; }
+      12% { opacity: 1; }
+      82% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes aerSpin {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(0deg) scale(.72);
+      }
+      15% { opacity: .42; }
+      58% {
+        opacity: .72;
+        transform: translate(-50%, -50%) rotate(330deg) scale(1.02);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(610deg) scale(.90);
+      }
+    }
+
+    @keyframes aerLabel {
+      0% { opacity: 0; transform: translateX(-50%) translateY(-5px); }
+      16% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      80% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      100% { opacity: 0; transform: translateX(-50%) translateY(4px); }
+    }
+
+
+
+    @keyframes steamGroup {
+      0% { opacity: 0; }
+      18% { opacity: 1; }
+      82% { opacity: 1; }
+      100% { opacity: .72; }
+    }
+
+    @keyframes steamRise {
+      0% {
+        opacity: 0;
+        transform: translateY(18px) translateX(0) scaleX(.72) rotate(0deg);
+      }
+      22% { opacity: .42; }
+      58% {
+        opacity: .24;
+        transform: translateY(-42px) translateX(5px) scaleX(1) rotate(3deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-92px) translateX(-5px) scaleX(1.15) rotate(-3deg);
+      }
+    }
+
+    @keyframes completeMessage {
+      0% { opacity: 0; transform: translateX(-50%) translateY(8px); }
+      22% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      78% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
     @keyframes ripple {
       0%, 100% { transform: scaleX(.9); opacity: .35; }
       50% { transform: scaleX(1); opacity: .6; }
@@ -349,11 +548,13 @@
 
     <div class="flow-label">FLOW</div>
     <div class="root-label">ROOT</div>
+    <div class="aer-label">AER</div>
 
     <div class="water-window" aria-hidden="true"><div class="water"></div></div>
     <div class="cocoa-window" aria-hidden="true"><div class="cocoa"></div></div>
     <div class="flow-window" aria-hidden="true"><div class="flow-fill"></div></div>
     <div class="root-window" aria-hidden="true"><div class="root-fill"></div></div>
+    <div class="aer-window" aria-hidden="true"><div class="aer-swirl"></div></div>
 
     <img class="vessel" src="assets/vessel.png" alt="LOARU Vessel">
 
@@ -384,7 +585,13 @@
     <div class="flow-stream" aria-hidden="true"></div>
     <div class="root-stream" aria-hidden="true"></div>
 
-    <div class="footer">LOARU · VERSION 1.23</div>
+
+    <div class="steam" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="complete-message">THE RITUAL IS COMPLETE</div>
+
+    <div class="footer">LOARU · VERSION 1.25</div>
   </main>
 
   <script>
