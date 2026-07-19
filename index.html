@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>LOARU – The Ritual v1.6</title>
+  <title>LOARU – The Ritual v1.7</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -81,25 +81,25 @@
       border-radius: 999px;
       background: linear-gradient(
         90deg,
-        rgba(255,255,255,.08),
-        rgba(220,242,255,.75),
-        rgba(255,255,255,.16)
+        rgba(255,255,255,.07),
+        rgba(220,242,255,.72),
+        rgba(255,255,255,.14)
       );
-      box-shadow: 0 0 5px rgba(185,225,255,.22);
+      box-shadow: 0 0 5px rgba(185,225,255,.18);
       animation: waterStream 3.4s 11.2s ease-in-out forwards;
     }
 
-    /* Wasser sitzt nur im schmalen Innenraum des Glases */
+    /* Sehr schmaler Wasserbereich, nur innerhalb der klaren Glasfläche */
     .water-window {
       position: absolute;
       left: 50%;
-      top: 63.1%;
-      width: min(20.5vw, 86px);
-      height: 16svh;
+      top: 69.4%;
+      width: min(16vw, 68px);
+      height: 18.2svh;
       transform: translate(-50%, -50%);
       z-index: 2;
       overflow: hidden;
-      border-radius: 45% 45% 40% 40% / 8% 8% 12% 12%;
+      border-radius: 43% 43% 38% 38% / 6% 6% 12% 12%;
       pointer-events: none;
     }
 
@@ -112,11 +112,11 @@
       opacity: 0;
       background: linear-gradient(
         to bottom,
-        rgba(224,244,255,.08),
-        rgba(176,219,243,.13) 45%,
-        rgba(125,184,219,.16) 100%
+        rgba(226,245,255,.07),
+        rgba(177,220,244,.12) 45%,
+        rgba(125,184,219,.15) 100%
       );
-      border-radius: 47% 47% 40% 40% / 8% 8% 12% 12%;
+      border-radius: 46% 46% 38% 38% / 7% 7% 12% 12%;
       animation: waterRise 3.4s 11.2s ease-in-out forwards;
     }
 
@@ -124,15 +124,15 @@
       content: "";
       position: absolute;
       top: -3px;
-      left: 8%;
-      width: 84%;
-      height: 7px;
+      left: 10%;
+      width: 80%;
+      height: 6px;
       border-radius: 50%;
       background: radial-gradient(
         ellipse at center,
-        rgba(230,247,255,.30) 0%,
-        rgba(180,224,247,.15) 48%,
-        transparent 78%
+        rgba(232,248,255,.28) 0%,
+        rgba(181,225,248,.13) 48%,
+        transparent 79%
       );
       animation: ripple 1.1s 11.2s ease-in-out 3;
     }
@@ -169,25 +169,26 @@
 
     @keyframes waterStream {
       0% { opacity: 0; height: 0; }
-      8% { opacity: .85; height: 66svh; }
-      88% { opacity: .85; height: 66svh; }
+      8% { opacity: .82; height: 66svh; }
+      88% { opacity: .82; height: 66svh; }
       100% { opacity: 0; height: 0; }
     }
 
+    /* Wasser steigt bis knapp an den goldenen LOARU-Streifen */
     @keyframes waterRise {
       0% { opacity: 0; height: 0; }
       10% { opacity: 1; }
-      100% { opacity: 1; height: 11.5svh; }
+      100% { opacity: 1; height: 17.2svh; }
     }
 
     @keyframes ripple {
       0%, 100% {
-        transform: scaleX(.88);
-        opacity: .38;
+        transform: scaleX(.9);
+        opacity: .35;
       }
       50% {
         transform: scaleX(1);
-        opacity: .65;
+        opacity: .6;
       }
     }
   </style>
@@ -228,7 +229,7 @@
 
     <div class="water-stream" aria-hidden="true"></div>
 
-    <div class="footer">LOARU · VERSION 1.6</div>
+    <div class="footer">LOARU · VERSION 1.7</div>
   </main>
 </body>
 </html>
