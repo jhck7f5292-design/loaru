@@ -1,90 +1,148 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>LOARU Ritual – Test v0.2 FIX</title>
-<style>
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;background:#000;overflow:hidden}
-body{font-family:Arial,Helvetica,sans-serif}
-.scene{position:relative;width:100vw;height:100svh;min-height:100vh;background:#000}
-.title{
-  position:absolute;top:7vh;left:0;right:0;text-align:center;
-  color:#d7b56d;font-size:30px;font-weight:300;letter-spacing:.28em;
-  padding-left:.28em;z-index:5
-}
-.badge{
-  position:absolute;top:18px;left:18px;color:#fff;background:#7a1f1f;
-  padding:8px 10px;border-radius:6px;font-size:12px;z-index:10
-}
-.vessel-wrap{
-  position:absolute;left:50%;top:56%;width:min(76vw,360px);
-  transform:translate(-50%,-50%);z-index:2
-}
-svg{display:block;width:100%;height:auto}
-.core{
-  position:absolute;left:50%;top:-24px;width:20px;height:20px;margin-left:-10px;
-  border-radius:50%;background:#6b3f27;z-index:4;
-  animation:drop 2.6s 1.2s forwards;opacity:0
-}
-.footer{
-  position:absolute;bottom:24px;left:0;right:0;text-align:center;
-  color:#777;font-size:11px;letter-spacing:.3em
-}
-@keyframes drop{
-  0%{opacity:0;transform:translateY(0)}
-  10%{opacity:1}
-  85%{transform:translateY(58svh)}
-  93%{transform:translateY(56.8svh)}
-  100%{opacity:1;transform:translateY(57.6svh)}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>LOARU – The Ritual v0.3</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .scene {
+      position: relative;
+      width: 100vw;
+      height: 100svh;
+      min-height: 100vh;
+      background: #000;
+    }
+
+    .title {
+      position: absolute;
+      top: max(6vh, 48px);
+      left: 0;
+      right: 0;
+      z-index: 5;
+      color: #d7b56d;
+      text-align: center;
+      font-size: clamp(24px, 7vw, 38px);
+      font-weight: 300;
+      letter-spacing: 0.28em;
+      padding-left: 0.28em;
+      opacity: 0;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    .vessel {
+      position: absolute;
+      left: 50%;
+      top: 56%;
+      width: min(78vw, 430px);
+      height: auto;
+      transform: translate(-50%, -50%) scale(0.96);
+      opacity: 0;
+      z-index: 2;
+      animation: vesselIn 1.3s 0.35s ease forwards;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .core {
+      position: absolute;
+      left: 50%;
+      top: -26px;
+      width: 20px;
+      height: 20px;
+      margin-left: -10px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, #906040 0 18%, #5b3523 45%, #2d1810 100%);
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      z-index: 4;
+      animation: dropDisc 2.6s 1.8s forwards;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: max(3vh, 22px);
+      left: 0;
+      right: 0;
+      color: rgba(255, 255, 255, 0.35);
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      padding-left: 0.35em;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes vesselIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -46%) scale(0.94);
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    @keyframes dropDisc {
+      0% {
+        opacity: 0;
+        transform: translateY(0);
+      }
+
+      8% {
+        opacity: 1;
+      }
+
+      82% {
+        transform: translateY(58svh);
+      }
+
+      92% {
+        transform: translateY(56.8svh);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(57.6svh);
+      }
+    }
+  </style>
 </head>
+
 <body>
-<main class="scene">
-  <div class="badge">NEUE DATEI · FIX 19.07.</div>
-  <div class="title">THE RITUAL</div>
+  <main class="scene">
+    <div class="title">THE RITUAL</div>
 
-  <div class="vessel-wrap">
-    <svg viewBox="0 0 360 560" aria-label="LOARU Vessel">
-      <defs>
-        <linearGradient id="glass" x1="0" x2="1">
-          <stop offset="0" stop-color="#fff" stop-opacity=".10"/>
-          <stop offset=".18" stop-color="#fff" stop-opacity=".42"/>
-          <stop offset=".5" stop-color="#fff" stop-opacity=".08"/>
-          <stop offset=".82" stop-color="#fff" stop-opacity=".34"/>
-          <stop offset="1" stop-color="#fff" stop-opacity=".08"/>
-        </linearGradient>
-        <linearGradient id="edge" x1="0" x2="1">
-          <stop offset="0" stop-color="#fff"/>
-          <stop offset=".5" stop-color="#777"/>
-          <stop offset="1" stop-color="#fff"/>
-        </linearGradient>
-      </defs>
+    <img
+      class="vessel"
+      src="assets/vessel.png"
+      alt="LOARU Vessel"
+    >
 
-      <ellipse cx="185" cy="74" rx="122" ry="34"
-               fill="none" stroke="url(#edge)" stroke-width="7"/>
-      <path d="M64 74 Q49 74 42 86 Q54 86 67 99"
-            fill="none" stroke="url(#edge)" stroke-width="7" stroke-linecap="round"/>
-      <path d="M63 74 L72 468 Q76 510 185 518 Q294 510 298 468 L307 74"
-            fill="url(#glass)" stroke="url(#edge)" stroke-width="7"/>
-      <ellipse cx="185" cy="468" rx="111" ry="36"
-               fill="none" stroke="url(#edge)" stroke-width="7"/>
-      <path d="M74 244 Q185 274 296 244"
-            fill="none" stroke="#d7b56d" stroke-width="4"/>
-      <rect x="122" y="238" width="126" height="34" fill="#000"/>
-      <text x="185" y="263" text-anchor="middle" fill="#d7b56d"
-            font-size="24" letter-spacing="6"
-            font-family="Arial,Helvetica,sans-serif">LOARU</text>
-      <polygon points="156,453 174,443 196,443 214,453 214,474 196,484 174,484 156,474"
-               fill="none" stroke="#d7b56d" stroke-width="3"/>
-      <circle cx="185" cy="464" r="6" fill="#d7b56d"/>
-    </svg>
-  </div>
+    <div class="core" aria-hidden="true"></div>
 
-  <div class="core"></div>
-  <div class="footer">VERSION 0.2 FIX</div>
-</main>
+    <div class="footer">LOARU · VERSION 0.3</div>
+  </main>
 </body>
 </html>
