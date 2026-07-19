@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>LOARU – The Ritual v1.3</title>
+  <title>LOARU – The Ritual v1.4</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -73,65 +73,76 @@
       position: absolute;
       left: 50%;
       top: -10vh;
-      width: 5px;
+      width: 4px;
       height: 0;
-      margin-left: -2.5px;
+      margin-left: -2px;
       z-index: 5;
       opacity: 0;
       border-radius: 999px;
       background:
         linear-gradient(
           90deg,
-          rgba(255,255,255,.15),
-          rgba(210,235,255,.8),
-          rgba(255,255,255,.35)
+          rgba(255,255,255,.12),
+          rgba(220,242,255,.82),
+          rgba(255,255,255,.28)
         );
       box-shadow:
-        0 0 7px rgba(185,225,255,.3),
-        0 0 16px rgba(185,225,255,.12);
+        0 0 6px rgba(185,225,255,.28),
+        0 0 14px rgba(185,225,255,.10);
       animation: waterStream 3.6s 11.2s ease-in-out forwards;
+    }
+
+    .water-window {
+      position: absolute;
+      left: 50%;
+      top: 59.7%;
+      width: min(43vw, 184px);
+      height: 24svh;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      overflow: hidden;
+      border-radius: 47% 47% 42% 42% / 8% 8% 12% 12%;
+      pointer-events: none;
     }
 
     .water {
       position: absolute;
-      left: 50%;
-      bottom: 18.8svh;
-      width: min(44vw, 190px);
+      left: 0;
+      right: 0;
+      bottom: 0;
       height: 0;
-      transform: translateX(-50%);
-      z-index: 3;
       opacity: 0;
-      overflow: hidden;
-      border-radius: 0 0 44% 44% / 0 0 10% 10%;
       background:
         linear-gradient(
           to bottom,
-          rgba(208,235,255,.10),
-          rgba(176,218,245,.18) 30%,
-          rgba(125,188,225,.23) 100%
+          rgba(222,242,255,.13) 0%,
+          rgba(177,219,244,.20) 45%,
+          rgba(125,184,219,.24) 100%
         );
-      border-left: 1px solid rgba(210,235,255,.13);
-      border-right: 1px solid rgba(210,235,255,.13);
+      border-radius: 48% 48% 42% 42% / 7% 7% 12% 12%;
+      box-shadow:
+        inset 8px 0 12px rgba(255,255,255,.04),
+        inset -8px 0 12px rgba(255,255,255,.03);
       animation: waterRise 3.6s 11.2s ease-in-out forwards;
     }
 
     .water::before {
       content: "";
       position: absolute;
-      top: -4px;
-      left: 0;
-      width: 100%;
-      height: 9px;
+      top: -5px;
+      left: 2%;
+      width: 96%;
+      height: 10px;
       border-radius: 50%;
       background:
         radial-gradient(
           ellipse at center,
-          rgba(225,245,255,.38) 0%,
-          rgba(170,220,245,.22) 45%,
-          rgba(100,170,215,.08) 72%,
-          transparent 76%
+          rgba(230,247,255,.46) 0%,
+          rgba(180,224,247,.27) 46%,
+          rgba(105,172,214,.07) 72%,
+          transparent 77%
         );
-      animation: ripple 1.1s 11.2s ease-in-out 3;
+      animation: ripple 1.15s 11.2s ease-in-out 3;
     }
 
     .footer {
@@ -204,7 +215,7 @@
 
       100% {
         opacity: 1;
-        height: 18.5svh;
+        height: 17.5svh;
       }
     }
 
@@ -215,8 +226,8 @@
       }
 
       50% {
-        transform: scaleX(1.03);
-        opacity: .8;
+        transform: scaleX(1.02);
+        opacity: .82;
       }
     }
   </style>
@@ -228,12 +239,10 @@
 
     <img class="vessel" src="assets/vessel.png" alt="LOARU Vessel">
 
-    <!-- Drei einzelne Microdiscs -->
     <img class="disc" src="assets/core.png" alt="" style="--x-start:-2px;--x-end:-5px;--fall:78.8svh;--spin:150deg;animation-duration:2.8s;animation-delay:1.0s;">
     <img class="disc" src="assets/core.png" alt="" style="--x-start:2px;--x-end:4px;--fall:78.5svh;--spin:220deg;animation-duration:2.75s;animation-delay:3.2s;">
     <img class="disc" src="assets/core.png" alt="" style="--x-start:-3px;--x-end:7px;--fall:78.2svh;--spin:290deg;animation-duration:2.7s;animation-delay:5.25s;">
 
-    <!-- Kompakte Bodenschicht -->
     <img class="disc" src="assets/core.png" alt="" style="--x-start:-5px;--x-end:-15px;--fall:78.7svh;--spin:280deg;animation-duration:2.25s;animation-delay:7.10s;">
     <img class="disc" src="assets/core.png" alt="" style="--x-start:5px;--x-end:15px;--fall:78.6svh;--spin:340deg;animation-duration:2.20s;animation-delay:7.20s;">
     <img class="disc" src="assets/core.png" alt="" style="--x-start:-2px;--x-end:-7px;--fall:78.3svh;--spin:210deg;animation-duration:2.22s;animation-delay:7.30s;">
@@ -254,9 +263,12 @@
     <img class="disc" src="assets/core.png" alt="" style="--x-start:-3px;--x-end:-9px;--fall:76.3svh;--spin:450deg;animation-duration:2.17s;animation-delay:8.80s;">
 
     <div class="water-stream" aria-hidden="true"></div>
-    <div class="water" aria-hidden="true"></div>
 
-    <div class="footer">LOARU · VERSION 1.3</div>
+    <div class="water-window" aria-hidden="true">
+      <div class="water"></div>
+    </div>
+
+    <div class="footer">LOARU · VERSION 1.4</div>
   </main>
 </body>
 </html>
