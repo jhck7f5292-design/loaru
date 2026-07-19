@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>LOARU – The Ritual v1.20</title>
+  <title>LOARU – The Ritual v1.21</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -221,6 +221,47 @@
       animation: cocoaSurface 2.6s 13.0s ease-in-out forwards;
     }
 
+
+    .flow-stream {
+      position: absolute;
+      left: 50%;
+      top: -10vh;
+      width: 4px;
+      height: 0;
+      margin-left: -2px;
+      z-index: 8;
+      opacity: 0;
+      border-radius: 999px;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 215, 120, .14),
+        rgba(230, 187, 78, .92),
+        rgba(255, 224, 146, .22)
+      );
+      box-shadow:
+        0 0 10px rgba(214, 171, 79, .34),
+        0 0 18px rgba(214, 171, 79, .18);
+      animation: flowStream 2.2s 16.2s ease-in-out forwards;
+    }
+
+    .flow-label {
+      position: absolute;
+      top: 18.5vh;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9;
+      opacity: 0;
+      color: #d7b56d;
+      text-align: center;
+      font-size: clamp(13px, 3.7vw, 18px);
+      font-weight: 500;
+      letter-spacing: .24em;
+      padding-left: .24em;
+      text-transform: uppercase;
+      animation: flowLabel 2.2s 16.2s ease-in-out forwards;
+      pointer-events: none;
+    }
+
     .footer {
       position: absolute;
       bottom: max(2.5vh, 18px);
@@ -295,6 +336,21 @@
       }
     }
 
+
+    @keyframes flowStream {
+      0% { opacity: 0; height: 0; }
+      12% { opacity: .95; height: 63svh; }
+      82% { opacity: .95; height: 63svh; }
+      100% { opacity: 0; height: 0; }
+    }
+
+    @keyframes flowLabel {
+      0% { opacity: 0; transform: translateX(-50%) translateY(-5px); }
+      18% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      82% { opacity: 1; transform: translateX(-50%) translateY(0); }
+      100% { opacity: 0; transform: translateX(-50%) translateY(4px); }
+    }
+
     @keyframes ripple {
       0%, 100% {
         transform: scaleX(.9);
@@ -311,6 +367,8 @@
 <body>
   <main class="scene">
     <div class="title">THE RITUAL</div>
+
+    <div class="flow-label">FLOW</div>
 
     <div class="water-window" aria-hidden="true">
       <div class="water"></div>
@@ -346,8 +404,9 @@
     <img class="disc" src="assets/core.png" alt="" style="--x-start:-3px;--x-end:-9px;--fall:76.3svh;--spin:450deg;animation-duration:2.17s;animation-delay:8.80s;">
 
     <div class="water-stream" aria-hidden="true"></div>
+    <div class="flow-stream" aria-hidden="true"></div>
 
-    <div class="footer">LOARU · VERSION 1.20</div>
+    <div class="footer">LOARU · VERSION 1.21</div>
   </main>
 
   <script>
