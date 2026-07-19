@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>LOARU – The Ritual v1.8</title>
+  <title>LOARU – The Ritual v1.9</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -46,7 +46,7 @@
       width: min(102vw, 560px);
       height: auto;
       transform: translate(-50%, -50%);
-      z-index: 4;
+      z-index: 3;
       user-select: none;
       -webkit-user-drag: none;
     }
@@ -60,7 +60,7 @@
       margin-left: -11px;
       object-fit: contain;
       opacity: 0;
-      z-index: 3;
+      z-index: 4;
       filter: drop-shadow(0 3px 6px rgba(0,0,0,.6));
       animation-name: dropDisc;
       animation-timing-function: cubic-bezier(.35,.03,.19,1);
@@ -93,9 +93,9 @@
     .water-window {
       position: absolute;
       left: 50%;
-      top: 68.0%;
-      width: min(13.5vw, 58px);
-      height: 12.5svh;
+      top: 64.2%;
+      width: min(30vw, 126px);
+      height: 21svh;
       transform: translate(-50%, -50%);
       z-index: 2;
       overflow: hidden;
@@ -178,7 +178,7 @@
     @keyframes waterRise {
       0% { opacity: 0; height: 0; }
       10% { opacity: 1; }
-      100% { opacity: 1; height: 11.8svh; }
+      100% { opacity: 1; height: 18.8svh; }
     }
 
     @keyframes ripple {
@@ -229,7 +229,7 @@
 
     <div class="water-stream" aria-hidden="true"></div>
 
-    <div class="footer">LOARU · VERSION 1.8</div>
+    <div class="footer">LOARU · VERSION 1.9</div>
   </main>
 </body>
 </html>
