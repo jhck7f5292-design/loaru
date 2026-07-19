@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>LOARU – The Ritual v0.9</title>
+  <title>LOARU – The Ritual v1.1</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -54,14 +54,14 @@
     .disc {
       position: absolute;
       left: 50%;
-      top: -14px;
-      width: 11px;
-      height: 11px;
-      margin-left: -5.5px;
+      top: -22px;
+      width: 22px;
+      height: 22px;
+      margin-left: -11px;
       object-fit: contain;
       opacity: 0;
       z-index: 4;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,.55));
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,.6));
       animation-name: dropDisc;
       animation-timing-function: cubic-bezier(.35,.03,.19,1);
       animation-fill-mode: forwards;
@@ -84,7 +84,7 @@
     @keyframes dropDisc {
       0% {
         opacity: 0;
-        transform: translate(var(--x-start), 0) rotate(0deg);
+        transform: translate(var(--x-start), 0) scale(.94) rotate(0deg);
       }
 
       7% {
@@ -92,16 +92,16 @@
       }
 
       88% {
-        transform: translate(var(--x-end), var(--fall)) rotate(var(--spin));
+        transform: translate(var(--x-end), var(--fall)) scale(1) rotate(var(--spin));
       }
 
       94% {
-        transform: translate(var(--x-end), calc(var(--fall) - 0.7svh)) rotate(var(--spin));
+        transform: translate(var(--x-end), calc(var(--fall) - 0.8svh)) scale(1) rotate(var(--spin));
       }
 
       100% {
         opacity: 1;
-        transform: translate(var(--x-end), var(--fall)) rotate(var(--spin));
+        transform: translate(var(--x-end), var(--fall)) scale(1) rotate(var(--spin));
       }
     }
   </style>
@@ -113,50 +113,32 @@
 
     <img class="vessel" src="assets/vessel.png" alt="LOARU Vessel">
 
-    <!-- Three clearly separated original CORE microdiscs -->
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-2px;--x-end:-6px;--fall:79.3svh;--spin:160deg;animation-duration:2.8s;animation-delay:1.0s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:3px;--x-end:4px;--fall:78.8svh;--spin:220deg;animation-duration:2.75s;animation-delay:3.2s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-4px;--x-end:9px;--fall:79.0svh;--spin:290deg;animation-duration:2.7s;animation-delay:5.25s;">
+    <!-- Drei einzelne Microdiscs -->
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:-2px;--x-end:-5px;--fall:78.8svh;--spin:150deg;animation-duration:2.8s;animation-delay:1.0s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:2px;--x-end:4px;--fall:77.9svh;--spin:220deg;animation-duration:2.75s;animation-delay:3.2s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:-3px;--x-end:8px;--fall:77.0svh;--spin:290deg;animation-duration:2.7s;animation-delay:5.25s;">
 
-    <!-- Compact cascade with original CORE PNG -->
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-10px;--x-end:-23px;--fall:79.0svh;--spin:280deg;animation-duration:2.28s;animation-delay:7.12s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:9px;--x-end:21px;--fall:78.9svh;--spin:340deg;animation-duration:2.20s;animation-delay:7.20s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-3px;--x-end:-10px;--fall:78.5svh;--spin:210deg;animation-duration:2.24s;animation-delay:7.28s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:12px;--x-end:28px;--fall:79.1svh;--spin:300deg;animation-duration:2.32s;animation-delay:7.36s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-14px;--x-end:-31px;--fall:79.2svh;--spin:260deg;animation-duration:2.18s;animation-delay:7.44s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:3px;--x-end:7px;--fall:78.2svh;--spin:390deg;animation-duration:2.21s;animation-delay:7.52s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:15px;--x-end:33px;--fall:78.8svh;--spin:330deg;animation-duration:2.26s;animation-delay:7.60s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-8px;--x-end:-18px;--fall:78.6svh;--spin:250deg;animation-duration:2.16s;animation-delay:7.68s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:6px;--x-end:15px;--fall:78.4svh;--spin:420deg;animation-duration:2.19s;animation-delay:7.76s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-18px;--x-end:-36px;--fall:79.0svh;--spin:370deg;animation-duration:2.31s;animation-delay:7.84s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:10px;--x-end:25px;--fall:78.1svh;--spin:280deg;animation-duration:2.18s;animation-delay:7.92s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-1px;--x-end:-4px;--fall:77.8svh;--spin:360deg;animation-duration:2.22s;animation-delay:8.00s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:18px;--x-end:38px;--fall:78.7svh;--spin:410deg;animation-duration:2.28s;animation-delay:8.08s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-11px;--x-end:-26px;--fall:78.3svh;--spin:300deg;animation-duration:2.14s;animation-delay:8.16s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:2px;--x-end:9px;--fall:77.6svh;--spin:430deg;animation-duration:2.20s;animation-delay:8.24s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-21px;--x-end:-42px;--fall:78.9svh;--spin:380deg;animation-duration:2.34s;animation-delay:8.32s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:13px;--x-end:31px;--fall:78.0svh;--spin:320deg;animation-duration:2.12s;animation-delay:8.40s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-5px;--x-end:-14px;--fall:77.4svh;--spin:450deg;animation-duration:2.18s;animation-delay:8.48s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:20px;--x-end:43px;--fall:78.6svh;--spin:350deg;animation-duration:2.24s;animation-delay:8.56s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-15px;--x-end:-33px;--fall:78.2svh;--spin:390deg;animation-duration:2.28s;animation-delay:8.64s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:4px;--x-end:16px;--fall:77.2svh;--spin:470deg;animation-duration:2.16s;animation-delay:8.72s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-23px;--x-end:-46px;--fall:78.8svh;--spin:420deg;animation-duration:2.36s;animation-delay:8.80s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:15px;--x-end:36px;--fall:77.8svh;--spin:360deg;animation-duration:2.14s;animation-delay:8.88s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-3px;--x-end:-8px;--fall:77.0svh;--spin:500deg;animation-duration:2.20s;animation-delay:8.96s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:23px;--x-end:47px;--fall:78.4svh;--spin:390deg;animation-duration:2.26s;animation-delay:9.04s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-18px;--x-end:-38px;--fall:77.9svh;--spin:430deg;animation-duration:2.31s;animation-delay:9.12s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:7px;--x-end:21px;--fall:76.8svh;--spin:520deg;animation-duration:2.18s;animation-delay:9.20s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-25px;--x-end:-49px;--fall:78.5svh;--spin:450deg;animation-duration:2.38s;animation-delay:9.28s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:17px;--x-end:41px;--fall:77.6svh;--spin:410deg;animation-duration:2.16s;animation-delay:9.36s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-7px;--x-end:-20px;--fall:76.6svh;--spin:540deg;animation-duration:2.22s;animation-delay:9.44s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:26px;--x-end:52px;--fall:78.2svh;--spin:420deg;animation-duration:2.28s;animation-delay:9.52s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-20px;--x-end:-43px;--fall:77.5svh;--spin:470deg;animation-duration:2.33s;animation-delay:9.60s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:9px;--x-end:27px;--fall:76.4svh;--spin:560deg;animation-duration:2.20s;animation-delay:9.68s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-28px;--x-end:-54px;--fall:78.0svh;--spin:490deg;animation-duration:2.40s;animation-delay:9.76s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:20px;--x-end:45px;--fall:77.3svh;--spin:440deg;animation-duration:2.18s;animation-delay:9.84s;">
-    <img class="disc" src="assets/core.png" alt="" style="--x-start:-10px;--x-end:-26px;--fall:76.2svh;--spin:580deg;animation-duration:2.24s;animation-delay:9.92s;">
+    <!-- Reduzierte Kaskade: ungefähr halb so viele Microdiscs -->
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:-7px;--x-end:-18px;--fall:78.6svh;--spin:280deg;animation-duration:2.25s;animation-delay:7.10s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:7px;--x-end:17px;--fall:78.3svh;--spin:340deg;animation-duration:2.20s;animation-delay:7.20s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:-2px;--x-end:-8px;--fall:77.6svh;--spin:210deg;animation-duration:2.22s;animation-delay:7.30s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:8px;--x-end:21px;--fall:77.4svh;--spin:300deg;animation-duration:2.28s;animation-delay:7.40s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:-10px;--x-end:-23px;--fall:77.2svh;--spin:260deg;animation-duration:2.18s;animation-delay:7.50s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:2px;--x-end:6px;--fall:76.5svh;--spin:390deg;animation-duration:2.20s;animation-delay:7.60s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:10px;--x-end:24px;--fall:76.3svh;--spin:330deg;animation-duration:2.24s;animation-delay:7.70s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:-6px;--x-end:-15px;--fall:76.1svh;--spin:250deg;animation-duration:2.16s;animation-delay:7.80s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:4px;--x-end:12px;--fall:75.4svh;--spin:420deg;animation-duration:2.18s;animation-delay:7.90s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:-12px;--x-end:-26px;--fall:75.2svh;--spin:370deg;animation-duration:2.28s;animation-delay:8.00s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:7px;--x-end:18px;--fall:75.0svh;--spin:280deg;animation-duration:2.17s;animation-delay:8.10s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:-1px;--x-end:-3px;--fall:74.3svh;--spin:360deg;animation-duration:2.20s;animation-delay:8.20s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:11px;--x-end:26px;--fall:74.1svh;--spin:410deg;animation-duration:2.24s;animation-delay:8.30s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:-8px;--x-end:-20px;--fall:73.9svh;--spin:300deg;animation-duration:2.14s;animation-delay:8.40s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:2px;--x-end:7px;--fall:73.2svh;--spin:430deg;animation-duration:2.18s;animation-delay:8.50s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:-13px;--x-end:-28px;--fall:73.0svh;--spin:380deg;animation-duration:2.30s;animation-delay:8.60s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:9px;--x-end:22px;--fall:72.8svh;--spin:320deg;animation-duration:2.12s;animation-delay:8.70s;">
+    <img class="disc" src="assets/core.png" alt="" style="--x-start:-4px;--x-end:-11px;--fall:72.1svh;--spin:450deg;animation-duration:2.17s;animation-delay:8.80s;">
 
-    <div class="footer">LOARU · VERSION 0.9</div>
+    <div class="footer">LOARU · VERSION 1.1</div>
   </main>
 </body>
 </html>
